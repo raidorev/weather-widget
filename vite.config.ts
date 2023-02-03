@@ -22,4 +22,7 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  test: {
+    setupFiles: ['./tests/setup.ts'],
+  },
 })
