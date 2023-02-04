@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import IconSettings from '@/components/icons/icon-settings.vue'
-import { locationsKey } from '@/injection-keys'
+import { locationsKey, type LocationsInjection } from '@/injection-keys'
 import LocationCard from './location-card.vue'
 
 const emit = defineEmits<{
   (event: 'open-settings'): void
 }>()
 
-const locations = inject(locationsKey, [])
+const { locations } = inject(locationsKey) as LocationsInjection
 </script>
 
 <template>

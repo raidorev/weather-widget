@@ -7,10 +7,15 @@ import { locationsKey } from '@/injection-keys'
 
 const isSettingsOpen = ref(false)
 
-const { tryToAddCurrentLocation, locations } = useLocations()
+const { tryToAddCurrentLocation, locations, addLocation, removeLocation } =
+  useLocations()
 tryToAddCurrentLocation()
 
-provide(locationsKey, locations)
+provide(locationsKey, {
+  locations,
+  addLocation,
+  removeLocation,
+})
 </script>
 
 <template>
