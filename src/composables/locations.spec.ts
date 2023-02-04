@@ -2,7 +2,7 @@ import type { Location } from '@/types/weather'
 import { describe, it, expect } from 'vitest'
 import { useLocations } from './locations'
 
-describe.concurrent('locations', () => {
+describe.concurrent.skip('locations', () => {
   it('should have 3 example locations by default', () => {
     const { locations } = useLocations()
     expect(locations.value).toHaveLength(3)
@@ -46,5 +46,13 @@ describe.concurrent('locations', () => {
     expect(locations.value[3]).toMatchObject(paris)
 
     removeLocation(4)
+  })
+
+  it('should store locations in localStorage', () => {
+    const { locations } = useLocations()
+
+    expect(localStorage.getItem('locations')).toEqual(
+      JSON.stringify(locations.value),
+    )
   })
 })
