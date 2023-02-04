@@ -27,16 +27,16 @@ const displayDistance = (distance: number) => {
       {{ location.name }}, {{ location.country }}
     </h4>
   </div>
-  <div class="flex items-center">
+  <div class="my-1 flex items-center">
     <img :src="weather.icon" alt="Weather condition icon" />
     <span class="text-4xl font-bold">{{ weather.tempeture }}°C</span>
   </div>
 
-  <div class="mb-2 flex items-center">
+  <div class="mb-3 flex items-center">
     Feels like {{ weather.feelsLike }}°C. {{ capitalize(weather.description) }}.
   </div>
 
-  <div class="mb-2 flex items-center">
+  <div class="mb-3 flex items-center">
     <div class="flex flex-1 items-center">
       <icon-wind class="mr-1 h-4 w-4" />
       <span>{{ weather.windSpeed }}m/s {{ weather.windDirection }}</span>
@@ -47,7 +47,7 @@ const displayDistance = (distance: number) => {
     </div>
   </div>
 
-  <div class="mb-2 flex items-center">
+  <div class="mb-3 flex items-center">
     <div class="flex flex-1 items-center">
       <icon-humidity class="mr-1 h-4 w-4" />
       <span>Humidity: {{ weather.humidity }}%</span>
