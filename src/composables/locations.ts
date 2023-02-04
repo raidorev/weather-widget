@@ -39,7 +39,7 @@ export const useLocations = () => {
 
       try {
         const response = await fetch(
-          `http://api.openweathermap.org/geo/1.0/reverse?lat=${geolocation.value.latitude}&lon=${geolocation.value.longitude}&limit=5&appid=${apiKey}`,
+          `https://api.openweathermap.org/geo/1.0/reverse?lat=${geolocation.value.latitude}&lon=${geolocation.value.longitude}&limit=5&appid=${apiKey}`,
         )
         const data = await response.json()
         addLocation({
