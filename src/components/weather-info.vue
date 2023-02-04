@@ -27,7 +27,7 @@ const displayDistance = (distance: number) => {
       {{ location.name }}, {{ location.country }}
     </h4>
   </div>
-  <div class="my-6 flex items-center">
+  <div class="flex items-center">
     <img :src="weather.icon" alt="Weather condition icon" />
     <span class="text-4xl font-bold">{{ weather.tempeture }}°C</span>
   </div>
