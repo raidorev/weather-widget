@@ -46,6 +46,7 @@ describe.concurrent('useLocalStorage', () => {
       setup() {
         return useLocalStorage(key, 'default')
       },
+      template: `<div></div>`,
     })
 
     expect(wrapper.vm.value).toEqual('test')
