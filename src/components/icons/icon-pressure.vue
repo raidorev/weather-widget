@@ -1,7 +1,7 @@
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
     <title>Pressure</title>
-    <g fill="#48484a" stroke="none">
+    <g transform="translate(0,96) scale(0.100000,-0.100000)" stroke="none">
       <path
         d="M351 854 c-98 -35 -179 -108 -227 -202 -27 -53 -29 -65 -29 -172 0
     -107 2 -119 29 -172 38 -75 104 -141 180 -181 58 -31 66 -32 176 -32 110 0
