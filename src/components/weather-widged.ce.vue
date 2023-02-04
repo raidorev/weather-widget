@@ -1,4 +1,17 @@
-<template>Weather Widget</template>
+<script setup lang="ts">
+import { ref } from 'vue'
+import SettingsScreen from '@/components/settings-screen.vue'
+import WeatherScreen from '@/components/weather-screen.vue'
+
+const isSettingsOpen = ref(false)
+</script>
+
+<template>
+  <div class="w-80">
+    <settings-screen v-if="isSettingsOpen" @close="isSettingsOpen = false" />
+    <weather-screen v-else @open-settings="isSettingsOpen = true" />
+  </div>
+</template>
 
 <style>
 /** Import Tailwind CSS for injecting styles into the shadow DOM */
