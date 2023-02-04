@@ -13,7 +13,7 @@ export interface Location {
  */
 export interface Weather {
   /** Temperature in Celsius degree */
-  readonly tempeture: number
+  readonly temperature: number
   /** Feels like in Celsius degree */
   readonly feelsLike: number
   /** Humidity in percent */

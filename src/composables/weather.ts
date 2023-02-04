@@ -49,7 +49,7 @@ export const useWeather = ({
 
 function normalizeData(data: any): Weather {
   return {
-    tempeture: Math.round(data.main.temp),
+    temperature: Math.round(data.main.temp),
     feelsLike: Math.round(data.main.feels_like),
     humidity: data.main.humidity,
     dewPoint: Math.round(calculateDewPoint(data.main.temp, data.main.humidity)),

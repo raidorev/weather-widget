@@ -29,7 +29,7 @@ const displayDistance = (distance: number) => {
   </div>
   <div class="my-1 flex items-center">
     <img :src="weather.icon" alt="Weather condition icon" />
-    <span class="text-4xl font-bold">{{ weather.tempeture }}°C</span>
+    <span class="text-4xl font-bold">{{ weather.temperature }}°C</span>
   </div>
 
   <div class="mb-3 flex items-center">

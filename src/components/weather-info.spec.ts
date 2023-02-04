@@ -12,7 +12,7 @@ describe('location-weather', () => {
     longitude: 0.1278,
   } as Location
   const weather = {
-    tempeture: 20.5,
+    temperature: 20.5,
     feelsLike: 18.3,
     humidity: 67.4,
     dewPoint: 4.5,
@@ -39,7 +39,7 @@ describe('location-weather', () => {
 
     const text = wrapper.text()
     const infos = [
-      `${weather.tempeture}°C`,
+      `${weather.temperature}°C`,
       `Feels like ${weather.feelsLike}°C`,
       capitalize(weather.description),
       `${weather.windSpeed}m/s ${weather.windDirection}`,
