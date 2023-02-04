@@ -1,6 +1,7 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
 import { nextTick } from 'vue'
+
 import { useLocationSearch } from './location-search'
 
 describe.concurrent('location-search', () => {

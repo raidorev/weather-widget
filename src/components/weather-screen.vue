@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { inject } from 'vue'
+
 import IconSettings from '@/components/icons/icon-settings.vue'
 import { locationsKey, type LocationsInjection } from '@/injection-keys'
+
 import LocationCard from './location-card.vue'
 
 const emit = defineEmits<{

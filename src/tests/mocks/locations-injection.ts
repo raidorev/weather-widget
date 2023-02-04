@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+
 import type { LocationsInjection } from '@/injection-keys'
 import type { Location } from '@/types/weather'
 

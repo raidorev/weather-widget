@@ -1,10 +1,12 @@
-import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
+
 import { locationsKey } from '@/injection-keys'
 import { locationsInjectionMock } from '@/tests/mocks/locations-injection'
-import SettingsScreen from './settings-screen.vue'
 import type { Location } from '@/types/weather'
+
 import SearchBar from './search-bar.vue'
+import SettingsScreen from './settings-screen.vue'
 
 describe('settings-screen', () => {
   it('should have h4 with "Settings" text', () => {

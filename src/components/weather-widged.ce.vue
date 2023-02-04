@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { provide, ref } from 'vue'
+
 import SettingsScreen from '@/components/settings-screen.vue'
 import WeatherScreen from '@/components/weather-screen.vue'
 import { useLocations } from '@/composables/locations'

@@ -1,7 +1,9 @@
-import { locationsStorageKey } from '@/config'
-import type { Location } from '@/types/weather'
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
+
+import { locationsStorageKey } from '@/config'
+import type { Location } from '@/types/weather'
+
 import { useLocations } from './locations'
 
 describe.concurrent('locations', () => {

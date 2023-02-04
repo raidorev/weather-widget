@@ -1,7 +1,9 @@
-import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
+
 import { locationsKey } from '@/injection-keys'
 import { locationsInjectionMock } from '@/tests/mocks/locations-injection'
+
 import WeatherScreen from './weather-screen.vue'
 
 describe('weather-screen', () => {

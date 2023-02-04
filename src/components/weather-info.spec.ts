@@ -1,7 +1,9 @@
-import { capitalize } from '@/helpers/capitalize'
-import type { Location, Weather } from '@/types/weather'
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+
+import { capitalize } from '@/helpers/capitalize'
+import type { Location, Weather } from '@/types/weather'
+
 import LocationWeather from './weather-info.vue'
 
 describe('location-weather', () => {

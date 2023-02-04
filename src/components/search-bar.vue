@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useLocationSearch } from '@/composables/location-search'
-import IconSearch from '@/components/icons/icon-search.vue'
 import IconLocation from '@/components/icons/icon-location.vue'
+import IconSearch from '@/components/icons/icon-search.vue'
+import { useLocationSearch } from '@/composables/location-search'
 import type { Location } from '@/types/weather'
 
 const emit = defineEmits<{

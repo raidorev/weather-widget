@@ -1,6 +1,8 @@
 import { watch } from 'vue'
+
 import { apiKey, locationsStorageKey } from '@/config'
 import type { Location } from '@/types/weather'
+
 import { useGeolocation } from './geolocation'
 import useLocalStorage from './local-storage'
 

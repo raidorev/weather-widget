@@ -1,6 +1,8 @@
-import type { Location } from '@/types/weather'
 import { flushPromises, mount } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
+
+import type { Location } from '@/types/weather'
+
 import IconLoading from './icons/icon-loading.vue'
 import LocationCard from './location-card.vue'
 import WeatherInfo from './weather-info.vue'

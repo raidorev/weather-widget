@@ -1,5 +1,6 @@
 import { fetch } from 'cross-fetch'
 import { afterAll, afterEach, beforeAll, vi } from 'vitest'
+
 import { localStorageMock } from './mocks/local-storage'
 import { navigatorMock } from './mocks/navigator'
 import { server } from './mocks/server'

@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+
 import SettingsScreen from './settings-screen.vue'
 import WeatherScreen from './weather-screen.vue'
 import WeatherWidget from './weather-widged.ce.vue'

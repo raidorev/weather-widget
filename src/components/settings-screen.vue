@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { inject, ref } from 'vue'
 import draggable from 'vuedraggable'
+
 import IconBurger from '@/components/icons/icon-burger.vue'
 import IconClose from '@/components/icons/icon-close.vue'
 import SearchBar from '@/components/search-bar.vue'

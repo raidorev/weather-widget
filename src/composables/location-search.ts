@@ -1,7 +1,8 @@
-import { computed, onBeforeUnmount, ref, watch, watchEffect } from 'vue'
+import { computed, onBeforeUnmount, ref, watchEffect } from 'vue'
+
+import { apiKey } from '@/config'
 import { debounce } from '@/helpers/debounce'
 import type { Location } from '@/types/weather'
-import { apiKey } from '@/config'
 
 /**
  * Use OpenWeatherMap API to search for locations by some query

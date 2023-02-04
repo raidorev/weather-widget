@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+
 import { calculateDewPoint, determineCardinalDirection } from './weather'
 
 describe.concurrent('weather', () => {

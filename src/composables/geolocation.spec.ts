@@ -1,6 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { afterEach, describe, expect, it } from 'vitest'
+
 import { navigatorMock } from '@/tests/mocks/navigator'
+
 import { useGeolocation } from './geolocation'
 
 describe('geolocation', () => {
@@ -9,7 +11,7 @@ describe('geolocation', () => {
   })
 
   it("shoud have isSupported value to be false if navigator.geolocation doesn't exist", () => {
-    // @ts-ignore
+    // @ts-expect-error
     global.navigator = { geolocation: undefined }
 
     const wrapper = mount({

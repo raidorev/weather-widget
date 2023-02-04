@@ -1,7 +1,7 @@
-import type { InjectionKey, Ref } from 'vue'
 import type { Location } from './types/weather'
+import type { InjectionKey, Ref } from 'vue'
 
-export type LocationsInjection = {
+export interface LocationsInjection {
   locations: Ref<Location[]>
   addLocation: (location: Location) => void
   removeLocation: (index: number) => void
