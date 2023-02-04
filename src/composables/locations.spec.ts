@@ -1,10 +1,11 @@
+import { locationsStorageKey } from '@/config'
 import type { Location } from '@/types/weather'
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
 import { useLocations } from './locations'
 
 describe.concurrent('locations', () => {
-  it('should have 3 example locations by default', () => {
+  it('should have no locations by default', () => {
     const wrapper = mount({
       setup() {
         return useLocations()
@@ -14,7 +15,7 @@ describe.concurrent('locations', () => {
 
     const { locations } = wrapper.vm
 
-    expect(locations).toHaveLength(3)
+    expect(locations).toHaveLength(0)
   })
 
   it('should add location', () => {
@@ -33,9 +34,9 @@ describe.concurrent('locations', () => {
       latitude: 48.8566,
       longitude: 2.3522,
     })
-    expect(locations).toHaveLength(4)
+    expect(locations).toHaveLength(1)
 
-    removeLocation(3)
+    removeLocation(0)
   })
 
   it('should remove location', () => {
@@ -64,12 +65,12 @@ describe.concurrent('locations', () => {
     addLocation(paris)
     addLocation(paris2)
 
-    removeLocation(4)
+    removeLocation(1)
 
-    expect(locations).toHaveLength(4)
-    expect(locations[3]).toMatchObject(paris)
+    expect(locations).toHaveLength(1)
+    expect(locations[0]).toMatchObject(paris)
 
-    removeLocation(4)
+    removeLocation(0)
   })
 
   it('should store locations in localStorage', () => {
@@ -82,6 +83,8 @@ describe.concurrent('locations', () => {
 
     const { locations } = wrapper.vm
 
-    expect(localStorage.getItem('locations')).toEqual(JSON.stringify(locations))
+    expect(localStorage.getItem(locationsStorageKey)).toEqual(
+      JSON.stringify(locations),
+    )
   })
 })

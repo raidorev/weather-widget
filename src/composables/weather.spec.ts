@@ -52,13 +52,14 @@ describe.concurrent('weather', () => {
     await fetchWeather()
 
     expect(weather.value).toMatchObject({
-      tempeture: expect.any(Number),
+      temperature: expect.any(Number),
       feelsLike: expect.any(Number),
       humidity: expect.any(Number),
       dewPoint: expect.any(Number),
       pressure: expect.any(Number),
       windSpeed: expect.any(Number),
-      windDirection: expect.any(String),
+      windDirection: expect.any(Number),
+      windDirectionCardinal: expect.any(String),
       visibility: expect.any(Number),
       description: expect.any(String),
       icon: expect.any(String),
