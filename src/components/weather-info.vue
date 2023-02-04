@@ -38,7 +38,10 @@ const displayDistance = (distance: number) => {
 
   <div class="mb-3 flex items-center">
     <div class="flex flex-1 items-center">
-      <icon-wind class="mr-1 h-4 w-4" />
+      <icon-wind
+        :style="{ transform: `rotate(${weather.windDirection}deg)` }"
+        class="mr-1 h-4 w-4"
+      />
       <span>
         {{ weather.windSpeed }}m/s {{ weather.windDirectionCardinal }}
       </span>
