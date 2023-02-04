@@ -19,7 +19,7 @@ provide(locationsKey, {
 </script>
 
 <template>
-  <div class="w-80">
+  <div class="w-80 font-sans">
     <settings-screen v-if="isSettingsOpen" @close="isSettingsOpen = false" />
     <weather-screen v-else @open-settings="isSettingsOpen = true" />
   </div>
