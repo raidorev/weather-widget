@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 import SettingsScreen from '@/components/settings-screen.vue'
 import WeatherScreen from '@/components/weather-screen.vue'
 import { useLocations } from '@/composables/locations'
+import { locationsKey } from '@/injection-keys'
 
 const isSettingsOpen = ref(false)
 
 const { tryToAddCurrentLocation, locations } = useLocations()
 tryToAddCurrentLocation()
 
+provide(locationsKey, locations)
 </script>
 
 <template>
