@@ -55,6 +55,7 @@ function normalizeData(data: any): Weather {
     dewPoint: Math.round(calculateDewPoint(data.main.temp, data.main.humidity)),
     pressure: data.main.pressure,
     windSpeed: Math.round(data.wind.speed * 10) / 10,
+    windDirection: data.wind.deg,
     windDirectionCardinal: determineCardinalDirection(data.wind.deg),
     visibility: data.visibility,
     description: data.weather[0].description,
