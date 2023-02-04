@@ -4,6 +4,10 @@ A weather widget that shows the current weather for given locations. The widget 
 
 By default the widget shows the weather for the current location. The user can add, remove and order locations in settings menu.
 
+## Demo
+
+You can see the widget in action at [https://weather-widget-raidorev.vercel.app](https://weather-widget-raidorev.vercel.app)
+
 ## Project Setup
 
 ```sh
