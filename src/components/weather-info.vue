@@ -39,7 +39,9 @@ const displayDistance = (distance: number) => {
   <div class="mb-3 flex items-center">
     <div class="flex flex-1 items-center">
       <icon-wind class="mr-1 h-4 w-4" />
-      <span>{{ weather.windSpeed }}m/s {{ weather.windDirection }}</span>
+      <span>
+        {{ weather.windSpeed }}m/s {{ weather.windDirectionCardinal }}
+      </span>
     </div>
     <div class="flex flex-1 items-center">
       <icon-pressure class="mr-1 h-4 w-4" />

@@ -25,7 +25,7 @@ export interface Weather {
   /** Wind speed in meter per second */
   readonly windSpeed: number
   /** Cardinal direction of wind */
-  readonly windDirection: string
+  readonly windDirectionCardinal: string
   /** Visibility in meter*/
   readonly visibility: number
   /** Weather description */
