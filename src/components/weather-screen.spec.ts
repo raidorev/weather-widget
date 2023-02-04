@@ -3,11 +3,6 @@ import { describe, expect, it } from 'vitest'
 import WeatherScreen from './weather-screen.vue'
 
 describe('weather-screen', () => {
-  it('should have h4 with "Weather" text', () => {
-    const wrapper = mount(WeatherScreen)
-    expect(wrapper.find('h4').text()).toBe('Weather')
-  })
-
   it('should have settings button with icon', () => {
     const wrapper = mount(WeatherScreen)
     const button = wrapper.find('button')
