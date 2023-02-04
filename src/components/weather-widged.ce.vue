@@ -2,8 +2,13 @@
 import { ref } from 'vue'
 import SettingsScreen from '@/components/settings-screen.vue'
 import WeatherScreen from '@/components/weather-screen.vue'
+import { useLocations } from '@/composables/locations'
 
 const isSettingsOpen = ref(false)
+
+const { tryToAddCurrentLocation, locations } = useLocations()
+tryToAddCurrentLocation()
+
 </script>
 
 <template>

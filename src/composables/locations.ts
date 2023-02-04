@@ -1,19 +1,16 @@
+import { watch } from 'vue'
+import { apiKey, locationsStorageKey } from '@/config'
 import type { Location } from '@/types/weather'
-import { ref } from 'vue'
+import { useGeolocation } from './geolocation'
 import useLocalStorage from './local-storage'
 
-// const locations = ref<Location[]>([
-//   { name: 'London', country: 'UK', latitude: 51.5074, longitude: 0.1278 },
-//   { name: 'New York', country: 'US', latitude: 40.7128, longitude: -74.006 },
-//   { name: 'Tokyo', country: 'JP', latitude: 35.6895, longitude: 139.6917 },
-// ])
-
 export const useLocations = () => {
-  const { value: locations } = useLocalStorage('locations', [
-    { name: 'London', country: 'UK', latitude: 51.5074, longitude: 0.1278 },
-    { name: 'New York', country: 'US', latitude: 40.7128, longitude: -74.006 },
-    { name: 'Tokyo', country: 'JP', latitude: 35.6895, longitude: 139.6917 },
-  ] as Location[])
+  const usingForTheFirstTime = !localStorage.getItem(locationsStorageKey)
+
+  const { value: locations } = useLocalStorage(
+    locationsStorageKey,
+    [] as Location[],
+  )
 
   const addLocation = (location: Location) => {
     locations.value.push(location)
@@ -22,5 +19,38 @@ export const useLocations = () => {
     locations.value.splice(index, 1)
   }
 
-  return { locations, addLocation, removeLocation }
+  const tryToAddCurrentLocation = () => {
+    // If this is the first time the user is using the app,
+    // we will try to add their current location
+    if (!usingForTheFirstTime) {
+      return
+    }
+
+    const { geolocation } = useGeolocation()
+
+    const stopWatcher = watch(geolocation, async () => {
+      if (!geolocation.value) {
+        return
+      }
+
+      stopWatcher()
+
+      try {
+        const response = await fetch(
+          `http://api.openweathermap.org/geo/1.0/reverse?lat=${geolocation.value.latitude}&lon=${geolocation.value.longitude}&limit=5&appid=${apiKey}`,
+        )
+        const data = await response.json()
+        addLocation({
+          name: data[0].name,
+          country: data[0].country,
+          latitude: data[0].lat,
+          longitude: data[0].lon,
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    })
+  }
+
+  return { locations, addLocation, removeLocation, tryToAddCurrentLocation }
 }
