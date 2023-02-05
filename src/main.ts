@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 
 import App from './app.vue'
+import { loadFonts } from './plugins/webfontloader'
 
 import './assets/main.css'
-import { loadFonts } from './plugins/webfontloader'
 
 void loadFonts()
 
