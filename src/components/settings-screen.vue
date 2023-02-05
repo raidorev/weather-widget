@@ -47,7 +47,7 @@ const { locations, addLocation, removeLocation } = inject(
           @start="drag = true"
           @end="drag = false"
         >
-          <template #item="{ element }">
+          <template #item="{ element, index }">
             <li
               :key="element.name"
               class="mb-2 flex items-center bg-gray-300 p-1 last:mb-0"
@@ -58,7 +58,7 @@ const { locations, addLocation, removeLocation } = inject(
               <span class="flex-auto">
                 {{ element.name }}, {{ element.country }}
               </span>
-              <button class="flex-none" @click="removeLocation(element.index)">
+              <button class="flex-none" @click="removeLocation(index)">
                 <icon-close class="h-6 w-6" />
               </button>
             </li>
