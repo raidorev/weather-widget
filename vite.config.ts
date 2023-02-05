@@ -23,6 +23,14 @@ export default defineConfig({
     'process.env': {},
   },
   test: {
-    setupFiles: ['./tests/setup.ts'],
+    include: ['src/**/*.spec.ts'],
+    setupFiles: [fileURLToPath(new URL('src/tests/setup.ts', import.meta.url))],
+    environment: 'jsdom',
+    coverage: {
+      provider: 'c8',
+      reporter: ['lcov'],
+      all: true,
+      include: ['src/**/*.{ts,js,vue}'],
+    },
   },
 })
