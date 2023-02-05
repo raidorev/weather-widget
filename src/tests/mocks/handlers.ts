@@ -15,10 +15,10 @@ export const weatherData = {
   ],
   base: 'stations',
   main: {
-    temp: 298.48,
-    feels_like: 298.74,
-    temp_min: 297.56,
-    temp_max: 300.05,
+    temp: 29.48,
+    feels_like: 29.74,
+    temp_min: 29.56,
+    temp_max: 30.05,
     pressure: 1015,
     humidity: 64,
     sea_level: 1015,
@@ -50,7 +50,7 @@ export const weatherData = {
   cod: 200,
 }
 
-const directs = [
+export const directs = [
   {
     name: 'London',
     local_names: {
@@ -306,6 +306,11 @@ const directs = [
 
 export const handlers = [
   rest.get(
+    'https://api.openweathermap.org/geo/1.0/reverse',
+    (request, response, context) =>
+      response(context.status(200), context.json([directs[0]])),
+  ),
+  rest.get(
     'https://api.openweathermap.org/data/2.5/weather',
     (request, response, context) => {
       // Example of some error from the API
@@ -318,8 +323,7 @@ export const handlers = [
   ),
   rest.get(
     'https://api.openweathermap.org/geo/1.0/direct',
-    (request, response, context) => {
-      return response(context.status(200), context.json(directs))
-    },
+    (request, response, context) =>
+      response(context.status(200), context.json(directs)),
   ),
 ]
