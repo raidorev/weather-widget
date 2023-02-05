@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 
 import SettingsScreen from './settings-screen.vue'
 import WeatherScreen from './weather-screen.vue'
-import WeatherWidget from './weather-widged.ce.vue'
+import WeatherWidget from './weather-widget.ce.vue'
 
 describe.concurrent('weather-widget', () => {
   it('should display weather screen by default', () => {

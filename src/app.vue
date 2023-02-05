@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import WeatherWidget from './components/weather-widged.ce.vue'
+import WeatherWidget from './components/weather-widget.ce.vue'
 </script>
 
 <template>
