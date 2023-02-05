@@ -60,6 +60,6 @@ function normalizeData(data: any): Weather {
     windDirectionCardinal: determineCardinalDirection(data.wind.deg),
     visibility: data.visibility,
     description: data.weather[0].description,
-    icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
+    icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`,
   }
 }
